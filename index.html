@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sample Scrolling Website | Javascript</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="stars.png" id="stars">
+            <img src="moon.png" id="moon">
+            <img src="mountains_behind.png" id="mountains_behind">
+            <h2 id="text">developer</h2>
+            <a href="#section1" id="btn">Explore</a>
+            <img src="mountains_front.png" id="mountains_front">
+        </section>
+        <div class="sec">
+            <h2>About the Project</h2>
+            <p>This is my first web development project. I am using html and css to create a website.<br><br>Authoritative Lead Software Developer with 3 years heading up successful development teams through agile direction and careful delegation. Willing to direct large-scale teams or work hands-on to complete extremely difficult projects. Brings both cutting-edge programming expertise and exceptional interpersonal skills to leadership roles. Multitalented software developer with experience in software industry. Demonstrated excellent skills in HTML, JavaScript and Python. True team player with              strengths in adaptability and accuracy. Highly skilled software development professional bringing more than 6 years in software design, development and integration. Offering advanced knowledge of  python and ruby programming languages. Background writing code and developing systems for computer applications. Enthusiastic technical professional with complete understanding of entire
+                software development lifecycle. Highly trained in debugging and hacking and known for having talents in music and football.
+            </p>
+        </div>
+
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header')
+
+            window.addEventListener('scroll', function(){
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.05 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value *1.5 + 'px';
+                header.style.top = value * 0.95 + 'px';
+            })
+        </script>
+
+        <div id="section1"></div>
+
+    </body>
+</html>
